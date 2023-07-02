@@ -4,7 +4,7 @@ import { engine } from 'express-handlebars'
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 })
 const openai = new OpenAIApi(configuration)
 
@@ -20,7 +20,7 @@ app.get('/', (_, res) => {
 })
 
 app.get('/hello', (_, res) => {
-    res.write('hello')
+    res.send('hello')
   })
 
 app.post('/', async (req, res) => {
