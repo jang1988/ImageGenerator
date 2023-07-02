@@ -19,6 +19,10 @@ app.get('/', (_, res) => {
   res.render('index')
 })
 
+app.get('/hello', (_, res) => {
+    res.write('hello')
+  })
+
 app.post('/', async (req, res) => {
   const prompt = req.body.prompt
   const size = req.body.size ?? '512x512'
