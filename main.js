@@ -45,5 +45,5 @@ app.post('/', async (req, res) => {
     })
   }
 })
-
-app.listen(80, () => console.log('Server started...'))
+const PORT = process.env.PORT || 80;
+app.listen(PORT, "0.0.0.0", () => console.log('Server started...'))
