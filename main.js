@@ -1,10 +1,10 @@
 import express from 'express'
-import config from 'config'
+// import config from 'config'
 import { engine } from 'express-handlebars'
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: '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',
 })
 const openai = new OpenAIApi(configuration)
 
