@@ -1,10 +1,13 @@
 import express from 'express'
-import config from 'config'
+// import config from 'config'
+import dotenv from 'dotenv'
 import { engine } from 'express-handlebars'
 import { Configuration, OpenAIApi } from 'openai'
 
+dotenv.config()
+
 const configuration = new Configuration({
-  apiKey: config.get('OPENAI_KEY'),
+  apiKey: process.env.OPENAI_KEY,
 })
 const openai = new OpenAIApi(configuration)
 
