@@ -1,10 +1,10 @@
 import express from 'express'
-// import config from 'config'
+import config from 'config'
 import { engine } from 'express-handlebars'
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: config.get('OPENAI_KEY'),
 })
 const openai = new OpenAIApi(configuration)
 
@@ -18,10 +18,6 @@ app.use(express.urlencoded({ extended: true }))
 app.get('/', (_, res) => {
   res.render('index')
 })
-
-app.get('/hello', (_, res) => {
-    res.send('hello')
-  })
 
 app.post('/', async (req, res) => {
   const prompt = req.body.prompt
